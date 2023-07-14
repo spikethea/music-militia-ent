@@ -2,11 +2,19 @@ html {
     margin: 0;
     padding: 0;
     color: white;
+    scroll-behavior: smooth;
 }
 
 body {
     width: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
 }
+
+:root {
+    --grey-light: #141414;
+}
+
 
 /* DxSLight Font */
 
@@ -88,7 +96,7 @@ h1 {
 }
 
 h1::after {
-    content: '-';
+    content: '';
     position: absolute;
     top: 30%;
     transform: translateX(-10%);
@@ -124,8 +132,44 @@ p {
     font-size: 2rem;
 }
 
+.top-navigation {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 7rem 0;
+}
+
 .top-navigation a {
     font-weight: 600;
+    
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    line-height: 5rem;
+    font-size: 8rem;
+    font-weight: bold;
+    transform: rotate(90deg);
+    color: white;
+    padding: 1rem;
+    z-index: 5;
+    opacity: 1;
+    transition: 0.3s opacity ease-in-out;
+
+}
+
+#back-to-top.hidden {
+    pointer-events: none;
+    opacity: 0;
+}
+
+#back-to-top:hover {
+    filter: none;
 }
 
 section {
@@ -139,7 +183,7 @@ section {
 }
 
 
-.meet-the-team {
+#meet-the-team {
     background-color: rgb(20, 20, 20);
 }
 
@@ -147,13 +191,16 @@ section {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .meet-the-team__profile {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
+    padding-bottom: 2rem;
     margin: 0;
 }
 
@@ -184,12 +231,12 @@ section {
     max-width: 100%;
 }
 
-.gallery {
+#gallery-section {
     position: relative;
     padding-bottom: 15rem;
 }
 
-.gallery::before {
+#gallery-section::before {
     content: "";
     background-image: url('../assets/images/gallery-bg.jpg');
     background-repeat: no-repeat;
@@ -284,7 +331,7 @@ section {
 
 /* Events Page*/
 
-.events {
+#events-section {
     padding: 10rem;
 }
 
@@ -379,7 +426,7 @@ section {
     border-radius: 1rem;
     height: fit-content;
     padding: 1.5rem 2rem;
-    background: rgba(255, 255, 255, 0.147);
+    background: var(--grey-light);
     color: white;
 }
 
@@ -410,6 +457,8 @@ section {
 }
 
 .tag-cloud-container a {
+    display: flex;
+    height: fit-content;
     background: rgb(191, 191, 191);
     font-size: 1.5rem;
     font-weight: 600;
@@ -431,17 +480,19 @@ img {
 }
 
 nav ul {
+    width: fit-content;
+    margin: 0;
     display: flex;
-    gap: 4rem;
+    gap: 12rem;
 }
 
-.hero-section {
+#hero-section {
     position: relative;
     background-image: url('../assets/images/hero_bg-image.jpg');
     background-size: cover;
 }
 
-.hero-section::before {
+#hero-section::before {
     content: '';
     display: block;
     position: absolute;
@@ -462,23 +513,51 @@ nav ul {
     z-index: 1;
 }
 
-.hero-section h5 {
+#hero-section h5 {
     text-align: center;
     font-size: 1.6rem;
 }
 
-
-.hero-section nav,
-.hero-section.social-media,
-.hero-section figure {
+#hero-section.social-media,
+#hero-section figure {
     z-index: 1;
 }
 
-.about-section p {
+#about-section p {
     text-align: center;
     max-width: 100rem;
     font-weight: 600;
 }
+
+/* Get Involved Page */
+
+#get-involved-section {
+    background: var(--grey-light);
+}
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us a, .contact-us p {
+    text-transform: none;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.contact-us a {
+    font-weight: bold;
+}
+
+.follow-us {
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
 
 @media screen and (max-width: 1200px) {
     html {
@@ -499,8 +578,181 @@ nav ul {
         font-size: 50%;  /* 1rem = 8px */
     }
 
+    section {
+        min-height: 80vh;
+    }
+
+    #gallery {
+        padding: 2rem;
+    }
+
     .top-navigation {
+        
+    }
+
+    nav ul {
+        gap: 8rem;
+    }
+
+    .glide {
+        padding: 0 7rem;
+    }
+
+    .glide__arrow--left, .glide__arrow--right {
+        margin: 0;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 50%;  /* 1rem = 8px */
+    }
+
+    section {
+        min-height: 80vh;
+        padding: 5rem;
+    }
+
+    .top-navigation {
+        z-index: 5;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        width: 100vw;
+        padding-top: 2rem;
+        left: 0;
+    }
+
+    #hero-section-link {
         display: none;
+    }
+
+    .top-navigation ul {
+        z-index: 6;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .top-navigation::before {
+        content: '';
+        z-index: 5;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10rem;
+        background: linear-gradient(-180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7623643207282913) 60%, rgba(0,0,0,0) 100%);
+    }
+
+    #gallery {
+        padding: 5rem 0;
+    }
+
+    #meet-the-team h1::before {
+        content: '';
+        position: absolute;
+        top: 20%;
+        transform: translateX(19%);
+        color: white;
+        background-color: white;
+        display: block;
+        width: 70%;
+        height: 0;
+        padding: .2rem;
+    }
+
+    #meet-the-team h1::after {
+        width: 40%;
+        top: 70%;
+        transform: translateX(79%);
+    }
+
+    #events {
+        padding: 5rem;
+    }
+
+    h1 {
+        margin: inherit;
+    }
+
+    h1::after {
+        width: 105%;
+        transform: translateX(-3%);
+    }
+
+    #hero-section h5 {
+        font-size: 2.5rem;
+        filter: drop-shadow(5px 5px 4px black);
+    }
+
+    #gallery-section {
+        padding: 5rem 0;
+    }
+
+    .top-navigation {
+        
+    }
+
+    .meet-the-team-profiles {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        
+    }
+
+    .glide {
+        padding: 0;
+    }
+
+    .glide__arrows {
+        display: none;
+    }
+
+    .mme_gallery-card {
+        min-height: 60vh;
+    }
+
+    .mme-event-card {
+        flex-direction: column;
+    }
+
+    .tag-cloud-container a i {
+        line-height: 2rem;
+    }
+
+    .mme-event-card_date:before {
+        transform: translate(-27px, 27px);
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .mme-event-card:hover .mme-event-card_date:before {
+        width: 3rem;
+    }
+
+
+
+    .mme-event-card .get-tickets-button {
+        width: 100%;
+    }
+
+    .mme-event-card__inner {
+        width: 100%;
+        justify-content: space-between;
+        padding-bottom: 2rem;
+    }
+
+    .mme-event-card__inner::before {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0;
     }
     
 }
