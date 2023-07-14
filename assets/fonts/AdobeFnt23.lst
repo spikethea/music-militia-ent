@@ -1,0 +1,37 @@
+%!Adobe-FontList 1.23
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Users/alexandrea/Documents/Client Work/Music Militia/MME Website Design/MME Website Design Folder/Document fonts/AdobeFnt23.lst
+FileLength:821
+FileModTime:705966242
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DxSlightFreePersonalUse-MdMed
+FamilyName:Dx Slight - Free Personal Use
+StyleName:Medium Medium
+MenuName:Dx Slight - Free Personal Use Md
+StyleBits:0
+WeightClass:500
+WidthClass:5
+AngleClass:0
+FullName:Dx Slight - Free Personal Use M
+WritingScript:Roman
+OutlineFileName:/Users/alexandrea/Documents/Client Work/Music Militia/MME Website Design/MME Website Design Folder/Document fonts/DxSlight-MediumUltra - Free Personal Use.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:39856
+FileModTime:689673518
+NameArray:0,Mac,4,Dx Slight - Free Personal Use M
+NameArray:0,Win,1,Dx Slight - Free Personal Use Md
+NameArray:0,Win,16,Dx Slight - Free Personal Use
+%EndFont
+
