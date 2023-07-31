@@ -1,7 +1,4 @@
 import Glide from '@glidejs/glide';
-import VConsole from 'vconsole';
-
-const vConsole = new VConsole();
 
 const heroSection = document.querySelector('#hero-section');
 const backToTop = document.querySelector('#back-to-top');
