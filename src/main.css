@@ -639,7 +639,7 @@ section {
 }
 
 h1 {
-    margin: inherit;
+    margin: 0;
 }
 
 h1::after {
